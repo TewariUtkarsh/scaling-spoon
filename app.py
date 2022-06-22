@@ -13,8 +13,7 @@ def index():
     return "Just a Flask App, updates in progress...."
 
 
-port = os.getenv("PORT", 80)
 if __name__ == '__main__':
 
     # host = '0.0.0.0'
-    app.run(debug=True, port=port)
+    app.run(debug=True)
