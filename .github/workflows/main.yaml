@@ -34,9 +34,10 @@ jobs:
           # For example, if you have a Dockerfile in the root of your project, leave it as follows:
           dockerfile_directory: ./
 
+          # NOTE: HEROKU SETS A Environment VAR FOR I.E PORT=8080 or 330567
           # (Optional, default: "Dockerfile")
           # Dockerfile name.
-          dockerfile_name: Dockerfile
+          dockerfile_name: Dockerfile.heroku
 
           # (Optional, default: "")
           # Additional options of docker build command.
