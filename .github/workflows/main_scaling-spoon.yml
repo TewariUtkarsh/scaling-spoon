@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_cb41d69b88fd460996c7f6c760858b19 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_7c8000348c9e4a4f87a58c2ac187c827 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_2c5ef94d1fc1449c9240ab3bd8ab37e0 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_2b498c14e7f8472f9a95394a657792ad }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_cb41d69b88fd460996c7f6c760858b19 }}/tewariutkarsh22/scaling-spoon:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_2c5ef94d1fc1449c9240ab3bd8ab37e0 }}/tewariutkarsh22/scaling-spoon:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'scaling-spoon'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_15d0c5e47a6441489b3c52b008ff86e1 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_cb41d69b88fd460996c7f6c760858b19 }}/tewariutkarsh22/scaling-spoon:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_bede43e5ad8a4c57b4cb502424fb79a8 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_2c5ef94d1fc1449c9240ab3bd8ab37e0 }}/tewariutkarsh22/scaling-spoon:${{ github.sha }}'
