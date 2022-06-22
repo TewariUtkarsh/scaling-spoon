@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_71379cdff255425e9e2c5e6143334095 }}/scaling-spoon:${{ github.sha }}
-        file: ./Dockerfile
+        file: Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
